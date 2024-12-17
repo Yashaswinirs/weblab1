@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-data</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+    color:whitesmoke ;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: bisque;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color:navy ;
+}
+
+.profile-section {
+    margin: 20px 0;
+}
+
+#profile-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid brown;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+ul li strong {
+    color: #333
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: beige;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> <B><U>Bio-data</U></B></h1>
+        <div class="profile-section">
+            <img src="pro.jpeg" alt="Profile Picture" id="profile-img">
+            <button id="change-photo-btn">Change Photo</button>
+        </div>
+        <ul>
+            <li><strong>Name:</strong> <span id="name">Yashaswini Sajjanshettar</span></li>
+            <li><strong>Date of Birth:</strong> <span id="dob">February 10, 2004</span></li>
+            <li><strong>Gender:</strong> <span id="gender">female</span></li>
+            <li><strong>Marital Status:</strong> <span id="marital-status">Single</span></li>
+            <li><strong>Address:</strong> <span id="address">582,44th cross, Jayanagar 8th block,bangalore</span></li>
+            <li><strong>Phone:</strong> <span id="phone">9900027648</span></li>
+            <li><strong>Email:</strong> <span id="email">yashu@gmail.com</span></li>
+            <li><strong>Nationality:</strong> <span id="nationality">Indian</span></li>
+            <li><strong>Languages Known:</strong> <span id="languages">English,Kannada,Hindi</span></li>
+            <li><strong>Hobbies:</strong> <span id="hobbies">Reading,Traveling,Baking</span></li>
+            <li><strong>Educational Qualifications:</strong> <span id="Qualifications">studying B.E in computer Science and Engineering at CEC,
+            Done Internship on web development </span></li>
+            <li><strong>Technical Skills:</strong> <span id="Skills">oops with Java and MERN technoloy for web development</span></li>
+            
+        </ul>
+        <button id="edit-btn">Edit Bio-data</button>
+    </div>
+    <footer> <B> &copy; 2024 MyWebsite. All Rights Reserved.</B>       
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const editButton = document.getElementById("edit-btn");
+    const changePhotoButton = document.getElementById("change-photo-btn");
+    const profileImg = document.getElementById("profile-img");
+
+    // Edit bio-data functionality
+    editButton.addEventListener("click", () => {
+        const editableFields = [
+            "name",
+            "dob",
+            "gender",
+            "marital-status",
+            "address",
+            "phone",
+            "email",
+            "nationality",
+            "languages",
+            "hobbies",
+        ];
+
+        editableFields.forEach((fieldId) => {
+            const field = document.getElementById(fieldId);
+            const currentText = field.textContent;
+            const newText = prompt(Edit $ {fieldId.replace("-", " ")}:, currentText);
+            if (newText !== null && newText.trim() !== "") {
+                field.textContent = newText.trim();
+            }
+        });
+    });
+
+    // Change profile photo functionality
+    changePhotoButton.addEventListener("click", () => {
+        const newPhotoUrl = prompt("Enter the URL of the new profile photo:");
+        if (newPhotoUrl) {
+            profileImg.src = newPhotoUrl;
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: whitesmoke
+}
+footer {
+    background:black;
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="mw">My Website </h1>
+
+        
+        <div class="navli" style="color: whitesmoke;">
+            <a href="index.html" class="ome"> <B>Home</B></a>
+            <a href="resume.html" class="es"><B>Resume</B></a>
+            <a href="bio-data.html" class="bio"><B>Biodata</B></a>                       
+        </div>
+    
+    
+       
+    
+    <div class="profile-circle">
+        <img src="pro.jpeg" alt="Profile Picture" >
+    </div>
+    <div class="yas">
+        <p class="hello"> Hello,</p>
+        <p class="nam">I'm <span class="nam1">Yashaswini Sajjanshettar <span>  </p>
+        <p class="work">Junior Web Developer</p> 
+        <p class="breif"> I am an aspiring and passionate web designer dedicated to learning and creating visually appealing, user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, and a keen eye for design, I am eager to grow my skills and bring creative ideas to life. </p>
+            <a href= "resume.html" class="a" > <button class="res"> RESUME </button></a>
+
+    </div>
+    
+    <footer>
+        <p><B>&copy; 2024 MyWebsite</B></p>
+        
+    </footer>
+    <script>
+        $(document).ready(function () {
+    $("nav a").on("click", function (e) {
+        e.preventDefault();
+        alert("Navigating to " + $(this).text());
+    });
+});
+
+    </script>
+</body>
+</html>
